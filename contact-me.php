@@ -1,19 +1,22 @@
 <?php
 /*
 * Plugin Name:       Contact Me
-* Plugin URI:        https://example.com/plugins/the-basics/
+* Plugin URI:        https://github.com/fabriziodeltufo/contact-me
 * Description:       Contact Me fixed banner for web sites.
 * Version:           1.0.0
-* Requires at least: 5.2
-* Requires PHP:      7.2
+* Requires at least: 6.4.2
+* Requires PHP:      7.4.33
 * Author:            Fabrizio Del Tufo
 * Author URI:        https://github.com/fabriziodeltufo
 * License:           GPL v2 or later
 * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
-* Update URI:        https://example.com/my-plugin/
 * Text Domain:       fdtcme
 * Domain Path:       /languages
 */
+
+
+
+
 
 /* Security  */
 if ( ! defined( 'ABSPATH' ) ) {
