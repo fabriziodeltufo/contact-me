@@ -45,7 +45,7 @@ function fdtcme_header_code() {
     
     $label = $options['label'];
     $email = $options[ 'email' ];
-    $banner_pos = $options['banner_pos']; // int 100,400,700 - top,midle,bottom
+    $banner_pos = $options['banner_pos']; // int 50,400,700 - top,midle,bottom
 
     if ( isset( $options[ 'banner_pos' ] ) ) {
         $banner_pos = esc_html( $options[ 'banner_pos' ] );
@@ -53,7 +53,7 @@ function fdtcme_header_code() {
             $top_pos = '50';
         }
         if ($banner_pos == 'MIDDLE'){
-            $top_pos = '400';
+            $top_pos = '300';
         }
         if ($banner_pos == 'BOTTOM'){
             $top_pos = '600';
@@ -63,7 +63,7 @@ function fdtcme_header_code() {
 
   
 	echo '<div style="top: '. $top_pos . 'px" id="fdtcme-tab" class="fdtcme-banner">';
-    echo '<p><a target = "_blank" href="mailto:' . $email . '?subject=Contact From Web Site">' . __( $label, 'fdcme' ) . '</a></p>';
+    echo '<p><a target = "_blank" href="mailto:' . $email . '">' . __( $label, 'fdcme' ) . '</a></p>';
 
 	echo '</div>';
 	

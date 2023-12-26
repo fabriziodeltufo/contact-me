@@ -22,7 +22,7 @@ add_settings_field(
     // Unique identifier for field
     'fdtcme_label_field',
     // Field Title
-    __( 'Label Link', 'fdtcme' ),
+    __( 'Label', 'fdtcme' ),
     // Callback for field markup
     'fdtcme_label_field_cb',
     // Page to go on
@@ -54,7 +54,7 @@ add_settings_field(
     // Unique identifier for field
     'fdtcme_email_field',
     // Field Title
-    __( 'Email to mailto', 'fdtcme' ),
+    __( 'Email', 'fdtcme' ),
     // Callback for field markup
     'fdtcme_email_field_cb',
     // Page to go on
@@ -72,26 +72,83 @@ SETTING BANNER POSITION FIELD
 
 function fdtcme_banner_pos_field_cb() {
 
-    echo "
-        <fieldset>
-        <legend>Select a banner position:</legend>
+    $options = get_option( 'contact_me_plugin' );
+    $banner_pos = $options[ 'banner_pos' ];
 
-        <div>
-        <input type = 'radio' id = 'top' name = 'contact_me_plugin[banner_pos]' value = 'TOP' checked />
-        <label for = 'top'>Top</label>
-        </div>
+    // var_dump( $banner_pos );
 
-        <div>
-        <input type = 'radio' id = 'middle' name = 'contact_me_plugin[banner_pos]' value = 'MIDDLE' />
-        <label for = 'middle'>Middle</label>
-        </div>
+    // int 50, 400, 700 - top, midle, bottom
 
-        <div>
-        <input type = 'radio' id = 'bottom' name = 'contact_me_plugin[banner_pos]' value = 'BOTTOM' />
-        <label for = 'bottom'>Bottom</label>
-        </div>
-        </fieldset>
-        ";
+    if ( isset( $options[ 'banner_pos' ] ) ) {
+        $banner_pos = esc_html( $options[ 'banner_pos' ] );
+
+        if ( $banner_pos == 'TOP' ) {
+
+            echo "
+            <fieldset>  
+            <div>
+            <input type = 'radio' id = 'top' name = 'contact_me_plugin[banner_pos]' value = 'TOP' checked />
+            <label for = 'top'>Top</label>
+            </div>
+    
+            <div>
+            <input type = 'radio' id = 'middle' name = 'contact_me_plugin[banner_pos]' value = 'MIDDLE' />
+            <label for = 'middle'>Middle</label>
+            </div>
+    
+            <div>
+            <input type = 'radio' id = 'bottom' name = 'contact_me_plugin[banner_pos]' value = 'BOTTOM' />
+            <label for = 'bottom'>Bottom</label>
+            </div>
+            </fieldset>
+            ";
+        }
+
+        if ( $banner_pos == 'MIDDLE' ) {
+            echo "
+            <fieldset>
+            <div>
+            <input type = 'radio' id = 'top' name = 'contact_me_plugin[banner_pos]' value = 'TOP'  />
+            <label for = 'top'>Top</label>
+            </div>
+
+            <div>
+            <input type = 'radio' id = 'middle' name = 'contact_me_plugin[banner_pos]' value = 'MIDDLE' checked />
+            <label for = 'middle'>Middle</label>
+            </div>
+
+            <div>
+            <input type = 'radio' id = 'bottom' name = 'contact_me_plugin[banner_pos]' value = 'BOTTOM' />
+            <label for = 'bottom'>Bottom</label>
+            </div>
+            </fieldset>
+            ";
+
+        }
+
+        if ( $banner_pos == 'BOTTOM' ) {
+            echo "
+            <fieldset>   
+            <div>
+            <input type = 'radio' id = 'top' name = 'contact_me_plugin[banner_pos]' value = 'TOP'  />
+            <label for = 'top'>Top</label>
+            </div>
+    
+            <div>
+            <input type = 'radio' id = 'middle' name = 'contact_me_plugin[banner_pos]' value = 'MIDDLE'  />
+            <label for = 'middle'>Middle</label>
+            </div>
+    
+            <div>
+            <input type = 'radio' id = 'bottom' name = 'contact_me_plugin[banner_pos]' value = 'BOTTOM' checked />
+            <label for = 'bottom'>Bottom</label>
+            </div>
+            </fieldset>
+            ";
+
+        }
+
+    }
 
 }
 

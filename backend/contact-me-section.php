@@ -3,7 +3,7 @@
 // SETTING SECTION : Define ( at least ) one section
 
 function fdtcme_section_cb() {
-    esc_html_e( 'Insert the label you want be shown in the banner and insert the email to mailto when user click on label link', 'fdcme' );
+    esc_html_e( 'Insert the banner label, the contact email and banner position', 'fdcme' );
 }
 
 add_settings_section(
