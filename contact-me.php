@@ -15,15 +15,13 @@
 */
 
 
-
-
-
 /* Security  */
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
     // Exit if accessed directly
 }
 
+define( 'WPPLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 
 
@@ -44,11 +42,52 @@ add_action( 'wp_enqueue_scripts', 'fdtcme_style_and_scripts' );
 
 function fdtcme_header_code() {
 
-	echo '<div id="fdtcme-tab" class="fdtcme-banner">';
-	echo '<p><a href = "mailto:info@dominio.com?Subject=Contact%20Request%20from%20WebSite" target = "_blank">' . __( 'Contact Me', 'fdcme' ) . '</a></p>';
+    $options = get_option( 'contact_me_plugin' );
+    
+    $label = $options['label'];
+    $email = $options[ 'email' ];
+    $banner_pos = $options['banner_pos']; // int 100,400,700 - top,midle,bottom
+
+    $top_pos = $options['top_pos']; // int 100,400,700 - top,midle,bottom
+
+
+
+    $banner_pos = '';
+
+    if ( isset( $options[ 'banner_pos' ] ) ) {
+        $banner_pos = esc_html( $options[ 'banner_pos' ] );
+        if ($banner_pos == 'TOP'){
+            $top_pos = '50';
+        }
+        if ($banner_pos == 'MIDDLE'){
+            $top_pos = '400';
+        }
+        if ($banner_pos == 'BOTTOM'){
+            $top_pos = '600';
+        }
+   
+    }
+
+
+
+
+    var_dump($top_pos);
+  
+	echo '<div style="top: '. $top_pos . 'px" id="fdtcme-tab" class="fdtcme-banner">';
+    echo '<p><a target = "_blank" href="mailto:' . $email . '?subject=Contact From Web Site">' . __( $label, 'fdcme' ) . '</a></p>';
+
 	echo '</div>';
 	
 
 }
 add_action( 'wp_body_open', 'fdtcme_header_code' );
+
+
+// plugin backend 
+include (WPPLUGIN_DIR . 'backend/contact-me-menu.php');
+include (WPPLUGIN_DIR . 'backend/contact-me-settings.php');
+
+
+
+
 

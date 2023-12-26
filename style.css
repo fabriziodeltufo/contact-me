@@ -16,9 +16,11 @@ p a:hover{
 }
 
 .fdtcme-banner {
+    position: fixed;
+    /* top: 50px; */
+    left: -180px;
     width: 200px;
     height: 50px;
-    position: fixed;
     font-size: 11px;
     padding:10px;
     margin:0;
@@ -26,8 +28,7 @@ p a:hover{
     z-index: 9999;
     text-align: center;
     color: #fff;
-    top: 50px;
-    left: -180px;
+ 
     border-radius: 0 5px 5px 0;
     transition: all 1s cubic-bezier(.215, .61, .355, 1);
 }
