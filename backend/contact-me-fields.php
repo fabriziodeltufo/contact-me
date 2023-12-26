@@ -1,100 +1,78 @@
 <?php
 
+/*  -----------------------------------------------------------------------------------------------
+SETTING LABEL FIELD
+--------------------------------------------------------------------------------------------------- */
 
+function fdtcme_label_field_cb() {
 
+    $options = get_option( 'contact_me_plugin' );
 
- 
+    $label = '';
 
-    // LABEL FIELD
-
-    add_settings_field(
-        // Unique identifier for field
-        'fdtcme_label_field',
-        // Field Title
-        __( 'Label Link', 'fdtcme' ),
-        // Callback for field markup
-        'fdtcme_label_field_cb',
-        // Page to go on
-        'fdtcme_page',
-        // Section to go in
-        'fdtcme_section',
-        array( 'class' => 'cme-label' )
-
-    );
-
-    function fdtcme_label_field_cb() {
-
-        $options = get_option( 'contact_me_plugin' );
-
-        $label = '';
-
-        if ( isset( $options[ 'label' ] ) ) {
-            $label = esc_html( $options[ 'label' ] );
-        }
-
-        echo '<input REQUIRED type="text" name="contact_me_plugin[label]" value="' . $label . '" />';
-
+    if ( isset( $options[ 'label' ] ) ) {
+        $label = esc_html( $options[ 'label' ] );
     }
 
-    // EMAIL FIELD
-    add_settings_field(
-        // Unique identifier for field
-        'fdtcme_email_field',
-        // Field Title
-        __( 'Email to mailto', 'fdtcme' ),
-        // Callback for field markup
-        'fdtcme_email_field_cb',
-        // Page to go on
-        'fdtcme_page',
-        // Section to go in
-        'fdtcme_section',
+    echo '<input REQUIRED type="text" name="contact_me_plugin[label]" value="' . $label . '" />';
 
-        array( 'class' => 'cme-email' )
+}
 
-    );
+add_settings_field(
+    // Unique identifier for field
+    'fdtcme_label_field',
+    // Field Title
+    __( 'Label Link', 'fdtcme' ),
+    // Callback for field markup
+    'fdtcme_label_field_cb',
+    // Page to go on
+    'fdtcme_page',
+    // Section to go in
+    'fdtcme_section',
+    array( 'class' => 'cme-label' )
 
-    function fdtcme_email_field_cb() {
+);
 
-        $options = get_option( 'contact_me_plugin' );
+/*  -----------------------------------------------------------------------------------------------
+SETTING EMAIL FIELD
+--------------------------------------------------------------------------------------------------- */
 
-        $email = '';
+function fdtcme_email_field_cb() {
 
-        if ( isset( $options[ 'email' ] ) ) {
-            $email = esc_html( $options[ 'email' ] );
-        }
+    $options = get_option( 'contact_me_plugin' );
 
-        echo '<input REQUIRED type="text" name="contact_me_plugin[email]" value="' . $email . '" />';
+    $email = '';
 
+    if ( isset( $options[ 'email' ] ) ) {
+        $email = esc_html( $options[ 'email' ] );
     }
 
-    // TOP POS FIELD
-    add_settings_field(
-        // Unique identifier for field
-        'fdtcme_banner_pos_field',
-        // Field Title
-        __( 'Banner Position', 'fdtcme' ),
-        // Callback for field markup
-        'fdtcme_banner_pos_field_cb',
-        // Page to go on
-        'fdtcme_page',
-        // Section to go in
-        'fdtcme_section',
+    echo '<input REQUIRED type="text" name="contact_me_plugin[email]" value="' . $email . '" />';
 
-        array( 'class' => 'cme-email' )
+}
+add_settings_field(
+    // Unique identifier for field
+    'fdtcme_email_field',
+    // Field Title
+    __( 'Email to mailto', 'fdtcme' ),
+    // Callback for field markup
+    'fdtcme_email_field_cb',
+    // Page to go on
+    'fdtcme_page',
+    // Section to go in
+    'fdtcme_section',
 
-    );
+    array( 'class' => 'cme-email' )
 
-    function fdtcme_banner_pos_field_cb() {
+);
 
+/*  -----------------------------------------------------------------------------------------------
+SETTING BANNER POSITION FIELD
+--------------------------------------------------------------------------------------------------- */
 
+function fdtcme_banner_pos_field_cb() {
 
-        echo '<input REQUIRED type="text" name="contact_me_plugin[top_pos]" value="' . $top_pos . '" />';
-        echo '<br><br>';
-        echo '<br><br>';
-        echo '<br><br>';
-
-
-        echo "
+    echo "
         <fieldset>
         <legend>Select a banner position:</legend>
 
@@ -115,6 +93,20 @@
         </fieldset>
         ";
 
-  
-       
-    }
+}
+
+add_settings_field(
+    // Unique identifier for field
+    'fdtcme_banner_pos_field',
+    // Field Title
+    __( 'Banner Position', 'fdtcme' ),
+    // Callback for field markup
+    'fdtcme_banner_pos_field_cb',
+    // Page to go on
+    'fdtcme_page',
+    // Section to go in
+    'fdtcme_section',
+
+    array( 'class' => 'cme-email' )
+
+);

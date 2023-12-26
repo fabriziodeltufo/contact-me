@@ -1,7 +1,6 @@
 <?php
 
-
-// PLUGIN FORM
+// CREATE PLUGIN FORM
 function fdtcme_template_cb()
 {
     // Double check user capabilities
@@ -13,7 +12,7 @@ function fdtcme_template_cb()
 }
 
 
-//  PLUGIN MENU / PAGE
+//  CREATE PLUGIN MENU / PAGE
 function fdtcme_plugin_menu()
 {
     add_menu_page(
@@ -26,4 +25,5 @@ function fdtcme_plugin_menu()
         0 // menu position in the sidebar
     );
 }
+
 add_action( 'admin_menu', 'fdtcme_plugin_menu' );

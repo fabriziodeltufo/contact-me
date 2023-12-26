@@ -21,11 +21,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     // Exit if accessed directly
 }
 
+// DEFINE CONST WPPLUGIN_DIR
 define( 'WPPLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 
 
-// Add Style / Js Script to plugin
+// STYLE / JS SET TO PLUGIN
 function fdtcme_style_and_scripts() {
     wp_enqueue_style( 'fdtcme-style', plugins_url( 'style.css', __FILE__ ) );
     wp_enqueue_script( 'fdtcme-scripts', plugins_url( 'scripts.js', __FILE__ ), array(), '1.0.0', true );
@@ -36,9 +37,7 @@ add_action( 'wp_enqueue_scripts', 'fdtcme_style_and_scripts' );
 
 
 
-/**
-* Add html to left / top of the page
-*/
+// HTML FRONT END BANNER
 
 function fdtcme_header_code() {
 
@@ -47,12 +46,6 @@ function fdtcme_header_code() {
     $label = $options['label'];
     $email = $options[ 'email' ];
     $banner_pos = $options['banner_pos']; // int 100,400,700 - top,midle,bottom
-
-    $top_pos = $options['top_pos']; // int 100,400,700 - top,midle,bottom
-
-
-
-    $banner_pos = '';
 
     if ( isset( $options[ 'banner_pos' ] ) ) {
         $banner_pos = esc_html( $options[ 'banner_pos' ] );
@@ -68,10 +61,6 @@ function fdtcme_header_code() {
    
     }
 
-
-
-
-    var_dump($top_pos);
   
 	echo '<div style="top: '. $top_pos . 'px" id="fdtcme-tab" class="fdtcme-banner">';
     echo '<p><a target = "_blank" href="mailto:' . $email . '?subject=Contact From Web Site">' . __( $label, 'fdcme' ) . '</a></p>';
@@ -83,7 +72,7 @@ function fdtcme_header_code() {
 add_action( 'wp_body_open', 'fdtcme_header_code' );
 
 
-// plugin backend 
+// PLUGIN BACKEND
 include (WPPLUGIN_DIR . 'backend/contact-me-menu.php');
 include (WPPLUGIN_DIR . 'backend/contact-me-settings.php');
 

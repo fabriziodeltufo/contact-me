@@ -1,4 +1,4 @@
-// Contact Me Tab
+// CONTACT ME BANNER
 
 const fdtCmeTab = document.querySelector('#fdtcme-tab');
 

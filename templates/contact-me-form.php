@@ -1,4 +1,4 @@
-<!-- FORM x input text values: label, email -->
+<!-- FORM x input text values: label, email , radio btn x banner position selection -->
 
 <div class="wrap">
 
@@ -13,9 +13,6 @@
         <!-- Display necessary hidden fields for settings -->
         <?php settings_fields( 'fdtcme_settings' );
     ?>
-
- 
-
 
         <!-- Default Submit Button -->
         <?php submit_button(); ?>
