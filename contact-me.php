@@ -50,7 +50,7 @@ function fdtcme_header_code() {
     if ( isset( $options[ 'banner_pos' ] ) ) {
         $banner_pos = esc_html( $options[ 'banner_pos' ] );
         if ($banner_pos == 'TOP'){
-            $top_pos = '50';
+            $top_pos = '10';
         }
         if ($banner_pos == 'MIDDLE'){
             $top_pos = '300';

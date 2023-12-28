@@ -16,6 +16,9 @@
 
         <!-- Default Submit Button -->
         <?php submit_button(); ?>
+
+        <!-- Status -->
+        <?php settings_errors() ?>
     </form>
 
     <hr>
