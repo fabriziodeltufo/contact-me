@@ -8,7 +8,7 @@ function fdtcme_template_cb()
       return;
     }
 
-    include( WPPLUGIN_DIR . 'templates/contact-me-form.php' ); // call to form
+    include( FDTCME_PLUGIN_DIR . 'templates/contact-me-form.php' ); // call to form
 }
 
 
