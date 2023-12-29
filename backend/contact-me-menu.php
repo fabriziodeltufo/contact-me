@@ -21,7 +21,7 @@ function fdtcme_plugin_menu()
         'manage_options', // capability
         'fdtcme', // plugin text domain / menu-slug
         'fdtcme_template_cb', // callback fx to output the content (form in the page)
-        'dashicons-admin-site', // plugin menu icon
+        'dashicons-menu', // plugin menu icon
         0 // menu position in the sidebar
     );
 }
