@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // DEFINE CONST WPPLUGIN_DIR
-define( 'WPPLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'FDTCME_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 
 
@@ -73,8 +73,8 @@ add_action( 'wp_body_open', 'fdtcme_header_code' );
 
 
 // PLUGIN BACKEND
-include (WPPLUGIN_DIR . 'backend/contact-me-menu.php');
-include (WPPLUGIN_DIR . 'backend/contact-me-settings.php');
+include (FDTCME_PLUGIN_DIR . 'backend/contact-me-menu.php');
+include (FDTCME_PLUGIN_DIR . 'backend/contact-me-settings.php');
 
 
 
