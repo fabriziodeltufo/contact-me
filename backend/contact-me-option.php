@@ -15,3 +15,4 @@ if ( !get_option( 'contact_me_plugin' ) ) {
     update_option( 'contact_me_plugin', $options );
 
 }
+
