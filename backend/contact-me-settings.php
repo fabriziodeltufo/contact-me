@@ -11,7 +11,7 @@ function fdtcme_settings_cb() {
     // REGISTERING THE SETTINGS //
    register_setting(
         'fdtcme_settings', // form values
-        'contact_me_plugin' //option name
+        'fdtcme_contact_me_plugin' //option name
     );
 
 

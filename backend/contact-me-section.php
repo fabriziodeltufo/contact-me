@@ -2,10 +2,6 @@
 
 // SETTING SECTION : Define ( at least ) one section
 
-function fdtcme_section_cb() {
-    esc_html_e( 'Insert the banner label, the contact email and banner position', 'fdcme' );
-}
-
 add_settings_section(
     // Unique identifier for the section
     'fdtcme_section',
@@ -16,4 +12,8 @@ add_settings_section(
     // Admin page to add section to
     'fdtcme_page'
 );
+
+function fdtcme_section_cb() {
+    esc_html_e( 'Insert the banner label, the contact email and banner position', 'fdcme' );
+}
 

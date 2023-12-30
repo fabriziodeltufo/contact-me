@@ -23,13 +23,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // DEFINE CONST WPPLUGIN_DIR
 define( 'FDTCME_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'FDTCME_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
 
 
 
 // STYLE / JS SET TO PLUGIN
 function fdtcme_style_and_scripts() {
-    wp_enqueue_style( 'fdtcme-style', plugins_url( 'style.css', __FILE__ ) );
-    wp_enqueue_script( 'fdtcme-scripts', plugins_url( 'scripts.js', __FILE__ ), array(), '1.0.0', true );
+
+    wp_enqueue_style( 'fdtcme-style', FDTCME_PLUGIN_URL . 'css/style.css' );
+
+    wp_enqueue_script( 'fdtcme-script', plugins_url( 'js/script.js', __FILE__ ), array(), '1.0.0', true );
+    // wp_enqueue_script( 'fdtcme-script', FDTCME_PLUGIN_URL . 'js/script.js' );
+
 }
 add_action( 'wp_enqueue_scripts', 'fdtcme_style_and_scripts' );
 
@@ -41,7 +47,7 @@ add_action( 'wp_enqueue_scripts', 'fdtcme_style_and_scripts' );
 
 function fdtcme_header_code() {
 
-    $options = get_option( 'contact_me_plugin' );
+    $options = get_option( 'fdtcme_contact_me_plugin' );
     
     $label = $options['label'];
     $email = $options[ 'email' ];

@@ -1,5 +1,4 @@
 body {
-    /* border: 1px solid red; */
     position: relative;
 }
 
@@ -9,6 +8,7 @@ p{
 
 p a{
     color:black;
+    text-decoration: none;
 }
 
 p a:hover{
@@ -21,14 +21,13 @@ p a:hover{
     left: -180px;
     width: 200px;
     height: 50px;
-    font-size: 11px;
+    font-size: 15px;
     padding:10px;
     margin:0;
     background: darkorange;
     z-index: 999999;
     text-align: center;
     color: #fff;
- 
     border-radius: 0 5px 5px 0;
     transition: all 1s cubic-bezier(.215, .61, .355, 1);
 }

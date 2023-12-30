@@ -9,7 +9,7 @@ if ( !get_option( 'fdtcme_contact_me_plugin' ) ) {
     $options = array(
         'label' => 'Contact Me !',
         'email' => 'info@domain.com',
-        'banner_pos' => 'TOP'
+        'banner_pos' => 'MIDDLE'
     );
 
     update_option( 'fdtcme_contact_me_plugin', $options );
