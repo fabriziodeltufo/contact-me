@@ -2,10 +2,6 @@ body {
     position: relative;
 }
 
-
-
-
-
 .fdtcme-banner {
     position: fixed;
     left: -180px;
@@ -23,7 +19,7 @@ body {
 .fdtcme-banner p {
     font-weight: bold;
     font-size: 15px;
-    margin:auto;
+    margin: auto;
 }
 
 .fdtcme-banner p a {
