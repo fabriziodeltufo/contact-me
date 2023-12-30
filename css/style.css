@@ -23,12 +23,12 @@ body {
 }
 
 .fdtcme-banner p a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
 .fdtcme-banner p a:hover {
-    color: white;
+    color: black;
 }
 
 
