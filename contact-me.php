@@ -1,18 +1,19 @@
 <?php
 /*
 * Plugin Name:       Contact Me Fixed Banner
-* Plugin URI:        https://github.com/fabriziodeltufo/contact-me
-* Description:       3 Positions Fixed Banner Customizable. Set Front End Position, Label, Email to mailto when users want to contact you.
+* Plugin URI:        https://wewebby.gumroad.com/
+* Description:       3 Positions Page Fixed Banner. Set Front End Position, Label, Email to mailto when users want to contact you.
 * Version:           1.0.0
 * Requires at least: 6.4.2
 * Requires PHP:      7.4.33
-* Author:            Fabrizio Del Tufo
-* Author URI:        https://github.com/fabriziodeltufo
+* Author:            WeWebby.com
+* Author URI:        https://wewebby.com
 * License:           GPL v2 or later
 * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 * Text Domain:       fdtcme
 * Domain Path:       /languages
 */
+
 
 
 /* Security  */
