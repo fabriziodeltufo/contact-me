@@ -76,7 +76,9 @@ function fdtcme_header_code() {
 	
 
 }
-add_action( 'wp_body_open', 'fdtcme_header_code' );
+// add_action( 'wp_body_open', 'fdtcme_header_code' );
+add_action( 'wp_head', 'fdtcme_header_code' );
+
 
 
 // PLUGIN BACKEND
